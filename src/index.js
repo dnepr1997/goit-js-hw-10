@@ -50,6 +50,6 @@ function onError() {
   loadingInfo.classList.replace('loader', 'is-hidden');
   infoCat.classList.add('is-hidden');
 //   errorInfo.classList.remove('is-hidden')
-  Notify.failure('Oops! Something went wrong! Try reloading the page!');
+  Notiflix.Notify.failure('Oops! Something went wrong! Try reloading the page!');
 }
 
