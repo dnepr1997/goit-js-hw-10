@@ -1,0 +1,19 @@
+span {
+    font-weight: 400px;
+    font-size: 20px;
+}
+.is-hidden {
+    display: none;
+}
+
+.cat-info {
+    display: flex;
+    padding-right: 400px;
+}
+
+.cat-img {
+    display: block;
+    max-width: 100%;
+    border: 1px solid #0d161b;
+    margin-right: 10px;
+}

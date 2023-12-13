@@ -1,4 +1,5 @@
 import Notiflix from 'notiflix';
+import SlimSelect from 'slim-select'
 import { fetchBreeds, fetchCatByBreed } from './cat-api'
 
 const selectMenu = document.querySelector('.breed-select')
@@ -14,6 +15,9 @@ fetchBreeds()
         return `<option value="${id}">${name}</option>`
         }).join("")
         selectMenu.insertAdjacentHTML('beforeend', createMark)
+        new SlimSelect({
+            select: selectcat,
+        });
      })
     .catch(error => error)
 
@@ -32,9 +36,11 @@ function handleClick(event) {
             const { id, url, breeds } = data[0]
             console.log(breeds);
             infoCat.innerHTML = `<img class="cat-img" src="${url}" alt="${breeds[0].name}" width=400px/>
+            <div>
             <h2>${breeds[0].name}</h2>
             <p>${breeds[0].description}</p>
-            <p><span>Temperament: </span>${breeds[0].temperament}</p>`
+            <p><span>Temperament: </span>${breeds[0].temperament}</p>
+            </div>`
         })
         .catch(error)
     
