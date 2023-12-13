@@ -9,6 +9,7 @@ span {
 .cat-info {
     display: flex;
     padding-right: 400px;
+    padding-top: 20px;
 }
 
 .cat-img {
