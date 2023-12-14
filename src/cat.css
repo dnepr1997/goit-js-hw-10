@@ -1,11 +1,10 @@
+.is-hidden {
+    display: none;
+}
 span {
     font-weight: 400px;
     font-size: 20px;
 }
-.is-hidden {
-    display: none;
-}
-
 .cat-info {
     display: flex;
     padding-right: 400px;
@@ -18,3 +17,4 @@ span {
     border: 1px solid #0d161b;
     margin-right: 10px;
 }
+

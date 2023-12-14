@@ -6,6 +6,7 @@ const selectMenu = document.querySelector('.breed-select')
 const loadingInfo = document.querySelector('.loader')
 const errorInfo = document.querySelector('.error')
 const infoCat = document.querySelector('.cat-info')
+
 errorInfo.classList.add('is-hidden')
 fetchBreeds()
     .then(data => {
@@ -26,7 +27,7 @@ selectMenu.addEventListener('change', handleClick)
 
 function handleClick(event) {
     loadingInfo.classList.replace('is-hidden', 'loader')
-    
+    // selectMenu.classList.add('is-hidden')
     infoCat.classList.add('is-hidden')
     const breedId = event.currentTarget.value;
     fetchCatByBreed(breedId)
@@ -35,7 +36,7 @@ function handleClick(event) {
             
             // infoCat.classList.remove('is-hidden')
             const { id, url, breeds } = data[0]
-            console.log(breeds);
+            
             infoCat.innerHTML = `<img class="cat-img" src="${url}" alt="${breeds[0].name}" width=400px/>
             <div>
             <h2>${breeds[0].name}</h2>
