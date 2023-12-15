@@ -22,7 +22,6 @@ fetchBreeds()
         new SlimSelect({
             select: selectcat,
         });
-        
      })
     .catch(error => error)
 
@@ -46,9 +45,10 @@ function handleClick(event) {
             <p>${breeds[0].description}</p>
             <p><span>Temperament: </span>${breeds[0].temperament}</p>
             </div>`
-            
+            infoCat.classList.replace('is-hidden', 'cat-info')
         })
         .catch(onError)
+    
 }
 function onError() {
   selectMenu.classList.remove('is-hidden');
