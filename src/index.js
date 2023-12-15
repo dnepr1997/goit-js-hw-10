@@ -6,10 +6,12 @@ const selectMenu = document.querySelector('.breed-select')
 const loadingInfo = document.querySelector('.loader')
 const errorInfo = document.querySelector('.error')
 const infoCat = document.querySelector('.cat-info')
+selectMenu.classList.replace('breed-select', 'is-hidden')
 
 errorInfo.classList.add('is-hidden')
 fetchBreeds()
     .then(data => {
+        selectMenu.classList.replace('is-hidden', 'breed-select')
         loadingInfo.classList.replace('loader', 'is-hidden')
         
         let createMark = data
@@ -20,6 +22,7 @@ fetchBreeds()
         new SlimSelect({
             select: selectcat,
         });
+        
      })
     .catch(error => error)
 
@@ -43,14 +46,16 @@ function handleClick(event) {
             <p>${breeds[0].description}</p>
             <p><span>Temperament: </span>${breeds[0].temperament}</p>
             </div>`
+            
         })
         .catch(onError)
 }
 function onError() {
   selectMenu.classList.remove('is-hidden');
   loadingInfo.classList.replace('loader', 'is-hidden');
-  infoCat.classList.add('is-hidden');
+//   infoCat.classList.add('is-hidden');
 //   errorInfo.classList.remove('is-hidden')
-  Notiflix.Notify.failure('Oops! Something went wrong! Try reloading the page!');
+    Notiflix.Notify.failure('Oops! Something went wrong! Try reloading the page!');
+    infoCat.classList.replace('cat-info', 'is-hidden')
 }
 
